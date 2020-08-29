@@ -1,0 +1,26 @@
+{
+  "name": "apifud",
+  "version": "1.0.0",
+  "description": "api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yocuervoc/apifud.git"
+  },
+  "author": "Yontan Cuervo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yocuervoc/apifud/issues"
+  },
+  "homepage": "https://github.com/yocuervoc/apifud#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-asyncify": "^1.0.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.1.0",
+    "sequelize": "^5.18.0"
+  }
+}
