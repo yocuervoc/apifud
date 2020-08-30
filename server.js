@@ -19,14 +19,7 @@ app.use('/api', api)
 //   res.send({ error: err.message })
 // })
 
-function handleFatalError(err) {
-  console.error(`${('[fatal error]')} ${err.message}`)
-  console.error(err.stack)
-  process.exit(1)
-}
 
-process.on('uncaughtException', handleFatalError)
-process.on('unhandledRejection', handleFatalError)
 
 server.listen(port, () => {
   console.log(`server listening on port ${port}`)

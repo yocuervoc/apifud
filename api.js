@@ -17,7 +17,7 @@ const WarehouseDescriptionModel = require('./model/warehouseDescription')
 
 
 
-const Warehouse = WarehouseSetup(WarehouseModel(sequelize))
+const Warehouse = WarehouseSetup(WarehouseModel(sequelize), WarehouseDescriptionModel(sequelize))
 const WarehouseDescription = WarehouseDescriptionSetup(WarehouseDescriptionModel(sequelize))
 
 const api = asyncify(express.Router())
@@ -44,7 +44,7 @@ api.get('/warehouses', async (req, res, next)=>{
     let arrayWarehouse = []
     try{
         arrayWarehouse = await Warehouse.findAllWarehouses()
-        console.log(arrayWarehouse)
+        
     }catch(e){
         return next("error", e)
     }
@@ -54,7 +54,7 @@ api.get('/warehouses', async (req, res, next)=>{
 
 api.get('/warehouse/:id', async (req, res, next)=>{
     const {id}  = req.params
-    console.log("idddd  ", id)
+
     let warehouse 
     try{
         warehouse = await Warehouse.findWarehouseById(id)
@@ -102,7 +102,7 @@ api.get('/warehouseDescription', async (req, res, next)=>{
     let arrayWarehouseDescriptions = []
     try{
         arrayWarehouseDescriptions = await WarehouseDescription.findAllWarehouseDescriptions()
-        console.log(arrayWarehouseDescriptions)
+        
     }catch(e){
         return next("error", e)
     }
