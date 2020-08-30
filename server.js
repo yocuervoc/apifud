@@ -12,15 +12,15 @@ app.use('/api', api)
 
 //manejo de errores
 
-app.use((err, req, res, next) => {
-  if (err.message.match(/not found/)) {
-    return res.status(404).send({ error: err.message })
-  }
-  res.send({ error: err.message })
-})
+// app.use((err, req, res, next) => {
+//   if (err.message.match(/not found/)) {
+//     return res.status(404).send({ error: err.message })
+//   }
+//   res.send({ error: err.message })
+// })
 
 function handleFatalError(err) {
-  console.error(`${chalk.red('[fatal error]')} ${err.message}`)
+  console.error(`${('[fatal error]')} ${err.message}`)
   console.error(err.stack)
   process.exit(1)
 }
