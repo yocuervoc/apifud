@@ -25,7 +25,7 @@ const api = asyncify(express.Router())
 
 api.use(express.json())
 api.use(express.urlencoded({ extended: false }))
-///
+
 
 api.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -39,7 +39,16 @@ api.use(function (req, res, next) {
     }
 });
 
-
+// Routes
+/**
+ * @swagger
+ * /warehouses:
+ *  get:
+ *    description: Use to request all warehouses
+ *    responses:
+ *      '200':
+ *        description: A successful response
+ */
 api.get('/warehouses', async (req, res, next)=>{
     let arrayWarehouse = []
     try{
@@ -111,7 +120,7 @@ api.get('/warehouseDescription', async (req, res, next)=>{
 
 api.get('/warehouseDescription/:id', async (req, res, next)=>{
     const {id}  = req.params
-    console.log("idddd  ", id)
+  
     let warehouse 
     try{
         warehouse = await WarehouseDescription.findWarehouseDescriptionById(id)
