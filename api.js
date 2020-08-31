@@ -297,7 +297,7 @@ api.get('/warehouseDescription/:id', async (req, res, next)=>{
 *       - application/json
 *     parameters:
 *       - name: 
-*           warehouse_id
+*           fk_warehouse_id
 *           phone
 *           address
 *           city
@@ -305,7 +305,7 @@ api.get('/warehouseDescription/:id', async (req, res, next)=>{
 *         schema:
 *           type: object
 *           properties:
-*             warehouse_id:
+*             fk_warehouse_id:
 *               type: integer
 *             phone:
 *               type: integer
@@ -314,6 +314,7 @@ api.get('/warehouseDescription/:id', async (req, res, next)=>{
 *             city:
 *               type: string
 *         required:
+*           fk_warehouse_id
 *           phone
 *           address
 *           city
