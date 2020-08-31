@@ -7,7 +7,7 @@ module.exports = function setupwarehouseDescriptionModel (config){
     const sequelize = setupDatabase (config)
 
     return sequelize.define('Warehouse_description', {
-        id: {
+        description_id: {
             type: Sequelize.INTEGER,
             autoIncrement: true,
             primaryKey: true,

@@ -252,7 +252,7 @@ api.get('/warehouseDescription', async (req, res, next)=>{
 
 /**
 * @swagger
-* /api/warehouseDescription/{id}:
+* /api/warehouseDescription/{description_id}:
 *   get:
 *     tags:
 *       - warehouseDescription
@@ -261,15 +261,15 @@ api.get('/warehouseDescription', async (req, res, next)=>{
 *     consumes:
 *       - application/json
 *     parameters:
-*       - name: id
+*       - name: description_id
 *         in: path
 *         schema:
 *           type: object
 *           properties:
-*             id:
+*             description_id:
 *               type: integer
 *         required:
-*           - id
+*           - description_id
 *     responses:
 *       200:
 *         description: warehouseDescription found successfully
@@ -392,15 +392,15 @@ api.put('/updateWarehouseDescription', async (req, res, next) => {
 *       - application/json
 *     parameters:
 *       - name: 
-*           id
+*           description_id
 *         in: body
 *         schema:
 *           type: object
 *           properties:
-*             id:
+*             description_id:
 *               type: integer
 *         required:
-*           id
+*           description_id
 *     responses:
 *       200:
 *         description: warehouseDescription deleted successfully
