@@ -11,11 +11,11 @@ Para correr el proyecto localmente:
 
 - instalar dependencias:
 
-npm i
+- - - npm i
 
--para iniciar el servidor correr el comando 
+- para iniciar el servidor correr el comando 
 
-node server
+- - - node server
 
 dieccion local de la documentacion: 
 
