@@ -155,7 +155,7 @@ api.post('/createWarehouse', async (req, res, next) => {
 *     tags:
 *       - warehouse
 *     name: warehouses
-*     summary: update a new warehouse 
+*     summary: update a  warehouse by id
 *     consumes:
 *       - application/json
 *     parameters:
@@ -197,7 +197,7 @@ api.put('/updateWarehouse', async (req, res, next) => {
 *     tags:
 *       - warehouse
 *     name: warehouses
-*     summary: create a new warehouse 
+*     summary: delete a warehouse by id
 *     consumes:
 *       - application/json
 *     parameters:
@@ -337,7 +337,7 @@ api.post('/createWarehouseDescription', async (req, res, next) => {
 *     tags:
 *       - warehouseDescription
 *     name: warehouseDescription
-*     summary: update a new warehouseDescription 
+*     summary: update a warehouseDescription by id
 *     consumes:
 *       - application/json
 *     parameters:
@@ -386,7 +386,7 @@ api.put('/updateWarehouseDescription', async (req, res, next) => {
 *     tags:
 *       - warehouseDescription
 *     name: warehouseDescription
-*     summary: delete a warehouseDescription
+*     summary: delete a warehouseDescription by id
 *     consumes:
 *       - application/json
 *     parameters:
