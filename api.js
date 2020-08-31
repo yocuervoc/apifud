@@ -127,7 +127,7 @@ api.get('/warehouse/:id', async (req, res, next)=>{
 *                 type: object
 *                 properties:
 *                     phone:
-*                         type: integer
+*                         type: string
 *                     address:
 *                         type: string
 *                     city:
@@ -160,21 +160,21 @@ api.post('/createWarehouse', async (req, res, next) => {
 *       - application/json
 *     parameters:
 *       - name: 
-*           id
+*           warehouse_id
 *           name
 *           headquarters_number
 *         in: body
 *         schema:
 *           type: object
 *           properties:
-*             id:
+*             warehouse_id:
 *               type: integer
 *             name:
 *               type: string
 *             headquarters_number:
 *               type: string
 *         required:
-*           id
+*           warehouse_id
 *           name
 *           headquarters_number
 *     responses:
@@ -184,9 +184,7 @@ api.post('/createWarehouse', async (req, res, next) => {
 api.put('/updateWarehouse', async (req, res, next) => {    
     try {
         let answer = await Warehouse.updateWarehouse(req.body)
-        res.json({
-          success: true
-        })
+        answer == 0 ? res.status(404).send("id not found") : res.json({success: true})
       } catch (error) {
           console.log('error : ', error)
       }
@@ -204,15 +202,15 @@ api.put('/updateWarehouse', async (req, res, next) => {
 *       - application/json
 *     parameters:
 *       - name: 
-*           id
+*           warehouse_id
 *         in: body
 *         schema:
 *           type: object
 *           properties:
-*             id:
+*             warehouse_id:
 *               type: integer
 *         required:
-*           id
+*           warehouse_id
 *     responses:
 *       200:
 *         description: Warehouse deleted successfully
@@ -220,9 +218,7 @@ api.put('/updateWarehouse', async (req, res, next) => {
 api.delete('/deleteWarehouse', async (req, res, next) => {
     try {
       let answer = await Warehouse.deleteWarehouse(req.body)
-      res.json({
-        success: true
-      })
+      answer == 0 ? res.status(404).send("id not found") : res.json({success: true})
     } catch (error) {
         console.log('error')
     }
@@ -377,9 +373,7 @@ api.post('/createWarehouseDescription', async (req, res, next) => {
 api.put('/updateWarehouseDescription', async (req, res, next) => {    
     try {
         let answer = await WarehouseDescription.updateWarehouseDescription(req.body)
-        res.json({
-          success: true
-        })
+        answer == 0 ? res.status(404).send("id not found") : res.json({success: true})
       } catch (error) {
           console.log('error : ', error)
       }
@@ -413,9 +407,7 @@ api.put('/updateWarehouseDescription', async (req, res, next) => {
 api.delete('/deleteWarehouseDescription', async (req, res, next) => {
     try {
       let answer = await WarehouseDescription.deleteWarehouseDescription(req.body)
-      res.json({
-        success: true
-      })
+      answer == 0 ? res.status(404).send("id not found") : res.json({success: true})
     } catch (error) {
         console.log('error')
     }
